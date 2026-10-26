@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; worker-src 'self'; connect-src 'self'">
+<title>WCW Match Search Engine</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="mark">W</span><div><b>WCW MATCH SEARCH ENGINE</b><small>NWA · JIM CROCKETT · WCW · ECW</small></div></div>
+    <nav class="tabs">
+      <button class="tab active" data-tab="matches">Matches</button>
+      <button class="tab" data-tab="shows">Shows</button>
+    </nav>
+    <button class="dbbtn" id="dbbtn" title="About the database">—</button>
+  </header>
+
+  <section class="controls">
+    <div class="searchwrap">
+      <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search a wrestler…  e.g. Hulk Hogan lost · Sting vs Ric Flair · Goldberg debut · Undertaker hell in a cell">
+      <div class="suggest" id="suggest" hidden></div>
+    </div>
+    <div class="filters">
+      <div class="group" id="f-era"></div>
+      <div class="group years"><label>Years</label><select id="f-from"></select><span>–</span><select id="f-to"></select></div>
+      <div class="group" id="f-kind"></div>
+      <div class="group"><select id="f-show"><option value="">Every show</option></select></div>
+      <div class="group" id="f-order"></div>
+    </div>
+    <div class="filters" id="match-filters">
+      <div class="group" id="f-result"></div>
+      <div class="group" id="f-finish"></div>
+      <div class="group" id="f-never"></div>
+      <div class="group" id="f-mode"></div>
+      <div class="group" id="f-dark"></div>
+      <div class="group" id="f-min"></div>
+      <div class="group"><select id="f-type"><option value="">Any match type</option></select></div>
+      <button class="reset" id="reset">Clear filters</button>
+    </div>
+  </section>
+
+  <main class="body">
+    <section class="results" id="results"></section>
+    <aside class="side" id="side"></aside>
+  </main>
+
+  <div class="loading" id="loading">
+    <div class="loadbox">
+      <div class="mark big">W</div>
+      <h1>WCW Match Search Engine</h1>
+      <p id="load-text">Opening the record book…</p>
+      <div class="bar"><i id="load-bar"></i></div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal" hidden><div class="sheet" id="sheet"></div></div>
+  <div class="toast" id="toast"></div>
+  <script src="parse.js"></script>
+  <script src="ui.js"></script>
+</body>
+</html>
