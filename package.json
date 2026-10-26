@@ -1,0 +1,8 @@
+{
+  "name": "wcw-match-search-engine",
+  "productName": "WCW Match Search Engine",
+  "version": "1.2.0",
+  "description": "Search every NWA, WCW and ECW match.",
+  "license": "MIT",
+  "main": "main.js"
+}
